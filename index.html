@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon/favicon.png.png" type="image/png">
+    <title>Jerdome The Business school</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-header">
+          <h1 style="  font-weight: bold;">Jerkodme</h1>
+            <h2>Financial Services Business Blueprint </h2>
+            
+        </div>
+        <div class="form-container">
+            <form class="custom-form" name="google-sheet">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Enter your full name" aria-label="Full Name" required>
+                </div>
+                <div class="form-group">
+                  <label for="Email">Email</label>
+                  <input type="Email" class="form-control" id="Email" name="email" placeholder="Enter your Email"  required>
+              </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number" aria-label="Phone Number" pattern="[0-9]{10}" required>
+                    <small class="form-text text-muted">Phone number should be 10 digits.</small>
+                </div>
+                <div class="form-group">
+                  <label for="State">State</label>
+                  <input type="text" class="form-control" id="state" name="state" placeholder="Enter your State"  required>
+              </div>
+                <div class="form-group">
+                    <label for="city">City / Village</label>
+                    <input type="text" class="form-control" id="city" name="city" placeholder="Enter your city or village" aria-label="City or Village" required>
+                </div>
+                  <label for="business">Existing Any Business:</label><br><br>
+    
+                <input type="radio" id="yes" name="choice" value="yes" required >
+                <label for="yes">Yes</label><br>
+                
+                <input type="radio" id="no" name="choice" value="no" required>
+                <label for="no">No</label><br><br>
+                
+                
+               
+                
+                
+                <button type="submit" class="btn btn-custom">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer style="background-color: #1a1a1a; color: #ffffff; padding: 20px 0; text-align: center;">
+      <div style="max-width: 1200px; margin: auto; padding: 0 20px;">
+        <p style="font-size: 16px; line-height: 1.6;">
+          <strong>About Us:</strong>  
+          We provide expert financial services, helping individuals and businesses make informed decisions to secure their future. Our solutions include investment planning, wealth management, insurance, and tax consulting. With a focus on integrity, innovation, and personalized service, we are committed to building long-term relationships and empowering our clients with financial freedom.
+        </p>
+        <p style="margin-top: 10px; font-size: 14px; color: #b3b3b3;">
+          © 2024 Jerkodme. All rights reserved.  
+          <a href="/privacy-policy" style="color: #ffffff; text-decoration: none;">Privacy Policy</a> |  
+          <a href="/terms-of-service" style="color: #ffffff; text-decoration: none;">Terms of Service</a>
+        </p>
+        <div style="margin-top: 10px;">
+          <a href="https://www.facebook.com/profile.php?id=61555066645646&mibextid=ZbWKwL" target="_blank" style="color: #ffffff; margin: 0 10px; text-decoration: none;">Facebook</a>
+          <a href="https://www.instagram.com/jerkdome/profilecard/?igsh=MTZsOGl5OXhrODQ1OQ==" target="_blank" style="color: #ffffff; margin: 0 10px; text-decoration: none;">Instagram</a>
+          <a href="https://t.me/+C4u1rpxckMY2ZTg1" target="_blank" style="color: #ffffff; margin: 0 10px; text-decoration: none;">Telegram</a>
+         
+        </div>
+      </div>
+    </footer>
+
+      
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxjl-ZrpP9hEIKedjvKjbuKzMVHq80dGv-KzaRHPtVmyaCl3o_JWC7j6A9WW5tnK_IY/exec'
+        const form = document.forms['google-sheet']
+
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+
+</body>
+</html>
